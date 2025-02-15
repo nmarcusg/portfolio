@@ -21,12 +21,6 @@
     justify-content: center;
 }
 
-.heading {
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
 .navigation {
     display: flex;
     justify-content: center;
