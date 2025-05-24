@@ -171,7 +171,7 @@ body {
 }
 
 .letter:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 .letter::after {
