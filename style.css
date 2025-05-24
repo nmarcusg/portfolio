@@ -5,6 +5,7 @@
     --white-button: #e0e0e0;
     --outline: #cdd1d4;
     --transition-primary: all 0.3s ease-in-out;
+    --transition-load: all 0.8s ease-in-out;
 }
 
 * {
@@ -18,14 +19,24 @@ html {
     font-family: "Inter Tight", sans-serif;
 }
 
+body {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-load);
+}
+
+.loaded {
+    opacity: 1;
+    visibility: visible;
+}
+
 .icon-link i {
     font-size: 3rem;
     color: var(--black);
     margin-left: 10px;
-
-
 }
 
+/* header */
 
 .header {
     display: flex;
@@ -88,6 +99,8 @@ html {
     font-size: 1.25rem;
 }
 
+/* main */
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -98,6 +111,7 @@ html {
     padding: 5vw;
     z-index: 10000;
 }
+
 
 .greeting-container {
     width: 50vw;
@@ -117,6 +131,10 @@ html {
     font-size: clamp(1rem, 15vw, 3rem);
 }
 
+.name-highlight {
+  font-weight: 800;
+}
+
 .image-container img {
     width: 100%;
     height: auto;
@@ -132,6 +150,8 @@ html {
     gap: 1rem;
     padding: .5rem;
 }
+
+/* components */
 
 .button {
     z-index: 100;
@@ -170,39 +190,39 @@ html {
   }
 
   
-.gradient-1 {
-background: rgb(21, 62, 184) none repeat scroll 0% 0% / auto padding-box border-box;
-width: 700px;
-height: 700px;
-animation-duration: 5s;
-opacity: 0.68;
-left: 50%;
-top: 60%;
-z-index: -2;
-animation-name: animation-gradient-1;
-}
-.gradient-2 {
-background: rgb(182, 181, 181) none repeat scroll 0% 0% / auto padding-box border-box;
-width: 600px;
-height: 600px;
-animation-duration: 5s;
-opacity: 0.68;
-left: 40%;
-top: 60%;
-z-index: -1;
-animation-name: animation-gradient-2;
-}
-.gradient-3 {
-background: rgb(21, 62, 184) none repeat scroll 0% 0% / auto padding-box border-box;
-width: 500px;
-height: 500px;
-animation-duration: 8s;
-opacity: 0.68;
-left: 50%;
-top: 50%;
-z-index: -3;
-animation-name: animation-gradient-3;
-}
+  .gradient-1 {
+    background: rgb(21, 62, 184) none repeat scroll 0% 0% / auto padding-box border-box;
+    width: 700px;
+    height: 700px;
+    animation-duration: 5s;
+    opacity: 0.68;
+    left: 50%;
+    top: 60%;
+    z-index: -2;
+    animation-name: animation-gradient-1;
+  }
+  .gradient-2 {
+    background: rgb(182, 181, 181) none repeat scroll 0% 0% / auto padding-box border-box;
+    width: 600px;
+    height: 600px;
+    animation-duration: 5s;
+    opacity: 0.68;
+    left: 40%;
+    top: 60%;
+    z-index: -1;
+    animation-name: animation-gradient-2;
+  }
+  .gradient-3 {
+    background: rgb(21, 62, 184) none repeat scroll 0% 0% / auto padding-box border-box;
+    width: 500px;
+    height: 500px;
+    animation-duration: 8s;
+    opacity: 0.68;
+    left: 50%;
+    top: 50%;
+    z-index: -3;
+    animation-name: animation-gradient-3;
+  }
 
   @keyframes animation-gradient-1 {
     0% {
