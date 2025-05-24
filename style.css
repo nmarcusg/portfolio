@@ -164,6 +164,22 @@ body {
     transition: var(--transition-primary);
 }
 
+.letter {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.letter:hover {
+  transform: translateY(-3px);
+}
+
+.letter::after {
+  content: '';
+  display: block;
+  height: 2px; /* reserves space to prevent layout shift */
+  visibility: hidden;
+}
 .button:hover {
     background-color: var(--black);
     color: var(--white);
