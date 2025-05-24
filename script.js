@@ -29,7 +29,7 @@ async function loadPage(path) {
         "/activities": "/pages/activities.html",
     };
 
-    const file = routes [path] || "404.html";
+    const file = routes[path] || "404.html";
 
     try {
         const res = await fetch(file);
