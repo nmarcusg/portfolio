@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font - Inter Tight -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+    <!-- styles -->
     <link rel="stylesheet" href="style.css">
 
     <title>Home | Nicolas Garcia</title>
 </head>
 <body>
+    
     <header class="header">
         <section class="nav-logo">
             <a href="index.html" class="logo">
@@ -20,9 +25,11 @@
 
         <nav>
             <ul class="nav-list">
-                <li>Home</li>
-                <li>About</li>
-                <li>Projects</li>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Lectures</a></li>
+                <li><a href="">Activities</a></li>
             </ul>
         </nav>
     </header>
@@ -37,11 +44,17 @@
             <div class="button-container">
                 <a href="projects.html" class="button">View My Projects</a>
                 <a href="about.html" class="button">About Me</a>
+                <a href="https://github.com/nmarcusg" class="icon-link" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://figma.com/@nmarcusg" class="icon-link" target="_blank">
+                    <i class="fa-brands fa-figma"></i>
+                </a>
             </div>
         </div>
 
         <div class="image-container">
-            <img src="https://avatars.githubusercontent.com/u/102885626?v=4" alt="Nicolas Garcia" class="profile-image">
+            <img src="images/profileimg.png" alt="Nicolas Garcia" class="profile-image">
         </div>
 
     </main>
@@ -49,5 +62,10 @@
     <footer>
         <p>footer</p>
     </footer>
+    <div class="wrapper">
+        <div class="gradient gradient-1"></div>
+        <div class="gradient gradient-2"></div>
+        <div class="gradient gradient-3"></div>
+      </div>
 </body>
 </html>
