@@ -360,6 +360,31 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap-reverse;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5vw;
+  max-width: 500px;
+  gap: 1rem;
+  text-align: justify;
+}
+
+.profile-image-container img{
+  max-width: 300px;
+  border-radius: 50%;
+  border: 2px solid var(--outline); 
+}
+
+.name {
+    font-size: clamp(1.5rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: var(--black);
 }
 
 .subcategory-list {
