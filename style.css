@@ -233,6 +233,7 @@ body {
     top: 60%;
     z-index: -2;
     animation-name: animation-gradient-1;
+    transition: var(--transition-primary);
   }
   .gradient-2 {
     background: rgb(182, 181, 181) none repeat scroll 0% 0% / auto padding-box border-box;
