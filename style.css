@@ -357,10 +357,22 @@ body {
     color: var(--black);
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
 .subcategory-list {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
+}
+
+.subcategory-title {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.5rem;
 }
 
 .subcategory-list li {
