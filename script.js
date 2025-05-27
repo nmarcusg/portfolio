@@ -20,8 +20,35 @@ window.addEventListener('popstate', () => {
     loadPage(location.pathname);
 });
 
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('nav-list').classList.toggle('active');
+});
+
 function easeIn() {
     document.body.classList.add('loaded');
+}
+
+function modalFunction() {
+    const modal = document.getElementById("imageModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.querySelector(".close");
+
+    // Open modal
+    openBtn.onclick = function () {
+    modal.style.display = "block";
+    };
+
+    // Close modal
+    closeBtn.onclick = function () {
+    modal.style.display = "none";
+    };
+
+    // Close if clicking outside the image
+    window.onclick = function (e) {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+    };
 }
 
 function changeBlobColor() {
@@ -34,11 +61,11 @@ function changeBlobColor() {
         blob.style.background = `${blobColors[1]}`;
     }
     else if (currentPath === '/projects') {
-        blob.style.background = `${blobColors[2]}`;
+        blob.style.background = `${blobColors[4]}`;
     } else if (currentPath === '/lectures') {
         blob.style.background = `${blobColors[3]}`;
     } else if (currentPath === '/activities') {
-        blob.style.background = `${blobColors[4]}`;
+        blob.style.background = `${blobColors[2]}`;
     } else {
         blob.style.background = `${blobColors[0]}`; // Default to blue
     }
@@ -61,16 +88,23 @@ function pageTransition() {
     }, timeout = 500);
   }
   
-function interactiveName(){
-const nameElement = document.getElementById('interactive-name');
-const letters = nameElement.textContent.split('');
-  nameElement.innerHTML = letters
-  .map(char => {
-      if (char === ' ') return '&nbsp;';
-      return `<span class="letter">${char}</span>`;
-    })
-    .join('');
-}
+  function interactiveName() {
+    const nameElement = document.getElementById('interactive-name');
+    if (!nameElement) return;
+  
+    const words = nameElement.textContent.trim().split(' ');
+  
+    const wordHTML = words.map(word => {
+      const letterSpans = word
+        .split('')
+        .map(char => `<span class="letter">${char}</span>`)
+        .join('');
+  
+      return `<div class="word">${letterSpans}</div>`;
+    }).join(' '); // Add space between word containers
+  
+    nameElement.innerHTML = wordHTML;
+  }
 
 function setupNavigation() {
     document.body.addEventListener('click', e => {
@@ -99,6 +133,10 @@ async function loadPage(path) {
         changeBlobColor();
         if (path === '/') {
             interactiveName();
+        }
+        if (path === '/projects') {
+            console.log("modal")
+            modalFunction();
         }
     } catch (err) {
         console.error('Error loading page:', err);
