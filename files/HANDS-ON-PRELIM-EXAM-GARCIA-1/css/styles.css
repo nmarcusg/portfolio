@@ -1,0 +1,386 @@
+/* nyaw */
+/* variables */
+:root {
+    --main-bg: #121212;
+    --card-bg: #1E1E1E; 
+    --card-accent: #292929;
+    --white: #E0E0E0;
+    --gold: #D4AF37;
+    --red: #FF2400; 
+    --deep-black: #000000; 
+    --charcoal-gray: #333333;
+}
+
+
+/* default */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    color: var(--white)
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+a {
+    display: block; 
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* utility */
+
+.flex-row {
+    display: flex;  
+    flex-direction: row; 
+}
+
+.flex-column {
+    display: flex;  
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 350px);
+    grid-auto-rows: 350px;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: row;
+}
+
+.box-3-2 {
+    grid-column: span 3;
+    grid-row: span 2;
+    width: 100%;
+
+}
+
+.box-3-1 {
+    grid-column: span 3;
+    width: 100%;
+}
+
+.box-2-2 {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.box-2-1 {
+    height: 350px;
+    grid-column: span 2;
+}
+
+.box-1-2 {
+    grid-row: span 2; 
+}
+
+.box-1-1 {
+    min-width: 350px;
+}
+
+.box-1-1, .box-1-2 {
+    justify-content: space-between;
+}
+
+.about {
+    justify-content: end;
+}
+
+.full-height {
+    min-height: 80vh;
+}
+
+.list-no-style {
+    list-style-type: none;
+}
+
+.link-no-style {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.remove-white {
+    mix-blend-mode: multiply;
+}
+
+.space-between-2 {
+    gap: 2rem;
+}
+
+.space-between-1 {
+    gap: 0.5rem;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.bottom {
+    justify-content: end;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    padding: 2.5rem;
+    border-radius: 24px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-accent);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 24px rgba(100, 108, 255, 0.3);
+
+  }
+  
+.xl-heading {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.5rem, 5vw + 1rem, 5rem);
+    font-weight: 900;
+    z-index: 1;
+}
+
+.large-heading {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.5rem, 5vw + 1rem, 3rem);
+    font-weight: 900;
+}
+
+.regular-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.white-text {
+    color: var(--white);
+}
+
+.old-price {
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.urgent {
+    color: var(--red);
+}
+
+.gold-highlight {
+    color: var(--gold);
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.side-img {
+    position: absolute;
+    display: block;
+    transform: translate(-20%, 3%) scale(0.8);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.preview-img {
+    position: absolute;
+    display: block;
+    transform: translate(-23%, -13%) scale(0.6);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.main-img {
+    position: absolute;
+    display: block;
+    transform: translate(10%, 40%) scale(1.1);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.icon-img {
+    position: absolute;
+    display: block;
+    transform: translate(0%, 0%) scale(1.1);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.stool {
+    position: absolute;
+    display: block;
+    transform: translate(-40%, 15%);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.center-img {
+    position: absolute;
+    display: block;
+    transform: translate(30%, 0%);
+    overflow: hidden;
+}
+
+.a-grid {
+    display: grid;
+    height: 100%;
+    width: 100%; 
+}
+
+.img-bg-1 {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.911)), /* Dark overlay */
+    url("https://www.pavilionbroadway.co.uk/media/catalog/category/furniture_1_2.jpg") no-repeat center center/cover;
+}
+
+.img-bg-2 {
+    background:
+    linear-gradient(rgba(100, 99, 99, 0.4), rgba(0, 0, 0, 0.904)),
+    url("https://oakandpineonline.co.uk/wp-content/uploads/2023/04/interior-design.jpg")
+    no-repeat center center/cover;
+}
+
+.img-bg-3 {
+    background:
+    linear-gradient(rgba(100, 99, 99, 0.4), rgba(0, 0, 0, 0.904)),
+    url("https://cdn.shopify.com/s/files/1/0568/6362/1297/files/mix_koltuk-amorf-1_600x600.jpg?v=1666270626")
+    no-repeat center center/cover;
+}
+
+.img-bg-4 {
+    background:
+    linear-gradient(rgba(100, 99, 99, 0.4), rgba(0, 0, 0, 0.904)),
+    url("https://www.fao.org/images/newsroomlibraries/import-library/yanshu-li-particleboard-china2014-dsc_0194_1.jpg?sfvrsn=7310cdd4_10")
+    no-repeat center center/cover;
+}
+
+.img-bg-5 {
+    background:
+    linear-gradient(rgba(100, 99, 99, 0.4), rgba(0, 0, 0, 0.904)),
+    url("https://www.riverbank-woodcrafts.co.uk/images/hand-crafted-wooden-items-home.jpg")
+    no-repeat center center/cover;
+}
+
+.img-bg-6 {
+    background:
+    linear-gradient(rgba(100, 99, 99, 0.4), rgba(0, 0, 0, 0.904)),
+    url("https://images.squarespace-cdn.com/content/v1/5ac2ddf285ede15e39a57666/731d4e30-96e3-4c01-b057-3f107f53ad49/Design-Anthology-2022-02+Hong+Kong+Wood+Crafts-Justin-Chan.jpg")
+    no-repeat center center/cover;
+}
+
+.text-glow {
+    text-shadow: none;
+    transition: text-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+  
+.text-glow:hover {
+    text-shadow: 
+      0 0 8px rgb(63, 71, 209),
+      0 0 16px rgb(233, 233, 233);
+    transform: scale(1.1);
+}
+
+/* components */
+
+.nav {
+    padding: 1rem 2rem;
+    margin: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    border: 2px solid var(--card-accent);
+    box-shadow: 0 2.4px 2.7px rgba(0, 0, 0, 0.008), 
+                0 6.3px 7.1px rgba(0, 0, 0, 0.012), 
+                0 13.8px 15.4px rgba(0, 0, 0, 0.015), 
+                0 27.5px 30.8px rgb(0 0 0 / 6%), 
+                0 55px 61px rgb(0 0 0 / 3%);
+}
+
+.logo {
+    max-width: 30px;
+    height: auto;
+}
+
+.logo-container {
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.main-content {
+    margin: 2rem;
+    gap: 2rem;
+}
+
+.hero {
+    position: relative;
+    padding: 5% 5%;
+}
+
+/* responsive */
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr)); 
+    }
+
+    .box-3-2,
+    .box-3-1 {
+        grid-column: span 2; 
+    }
+
+    .box-1-2 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .box-2-2,
+    .box-2-1 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .box-3-2,
+    .box-3-1 {
+    grid-column: span 2;
+    }
+
+    .box-2-2,
+    .box-2-1,
+    .detail {
+      grid-column: span 2;
+    }
+}
+
+@media (max-width: 425px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .grid > * {
+        grid-column: span 1 !important;
+        max-width: 100% !important;
+    }
+
+    .nav{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+}

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample University Enrollment System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .university-name {
+      text-align: center;
+      margin-left: 120px;
+      margin-right: 120px;
+    }
+    h1 {
+      margin: 10px 0 0;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      margin: 5px 0;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 12px;
+      font-style: italic;
+      margin: 0;
+    }
+    .row {
+      display: flex;
+      margin-bottom: 10px;
+      gap: 100px; /* Reduced gap for more equal spacing */
+    }
+    .col {
+      flex: 1;
+    }
+    .form-row {
+      margin-bottom: 10px;
+    }
+    .form-group {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .form-group label {
+      min-width: 100px;
+      margin-right: 10px;
+    }
+    .form-control {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid #999;
+      padding: 5px 0;
+    }
+    .colon-layout {
+      display: flex;
+      align-items: center;
+    }
+    .colon-layout label {
+      min-width: 100px;
+    }
+    .colon-layout .colon {
+      margin: 0 5px;
+    }
+    .section-header {
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+    .radio-group {
+      margin: 5px 0 5px 25px; /* Increased indentation */
+    }
+    .indented {
+      margin-left: 50px; /* Increased indentation for wrapped text */
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .program-field {
+      text-align: right;
+    }
+    .student-id-field {
+      text-align: right;
+    }
+    
+    /* Modified name-fields styles to connect only surname, given name, and middle name */
+    .name-fields {
+      display: flex;
+      justify-content: space-between;
+    }
+    .name-field {
+      flex: 1;
+      margin: 0 5px;
+      text-align: center;
+    }
+    /* Special styling for the connected fields */
+    .connected-fields {
+      display: flex;
+      flex: 3; /* Take up more space than the auxiliary field */
+      margin-right: 15px;
+    }
+    .connected-field {
+      flex: 1;
+      position: relative;
+    }
+    .connected-field input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #999;
+      padding: 5px 0;
+      border-radius: 0;
+    }
+    /* Connected look styling */
+    .connected-field:not(:last-child) input {
+      border-right: 1px dotted #ddd;
+    }
+    .name-label {
+      font-size: 10px;
+      text-align: center;
+    }
+    
+    .parent-sections {
+      display: flex;
+      gap: 100px; 
+      margin-top: 35px;
+    }
+    .parent-section {
+      flex: 1;
+    }
+    .single-line {
+      white-space: nowrap;
+    }
+    .status-sections {
+      display: flex;
+      margin-bottom: 35px;
+      gap: 100px;
+    }
+    
+    .contact-row {
+      display: flex;
+      gap: 20px;
+    }
+    .contact-row .col {
+      flex: 1;
+    }
+    .guardian-section {
+      margin-top: 35px; /* Added more spacing above guardian section */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="university-name">
+      <h1>SAMPLE UNIVERSITY</h1>
+      <p>ENROLLMENT SYSTEM</p>
+    </div>
+  </div>
+  
+  <div class="top-bar">
+    <div></div>
+    <div class="program-field">
+      Program: <input type="text" class="form-control" style="width: 200px;">
+    </div>
+  </div>
+  
+  <h2>PERSONAL DATA SHEET</h2>
+  <p class="subtitle">(Graduate School, Law, Medicine)</p>
+  
+  <div class="student-id-field" style="text-align: right; margin-bottom: 20px;">
+    Student #: <input type="text" class="form-control" style="width: 200px;">
+  </div>
+  
+  <div class="name-fields">
+    <!-- Connected fields: surname, given name, middle name -->
+    <div class="connected-fields">
+      <div class="connected-field">
+        <input type="text" class="form-control">
+        <div class="name-label">SURNAME</div>
+      </div>
+      <div class="connected-field">
+        <input type="text" class="form-control">
+        <div class="name-label">GIVEN NAME</div>
+      </div>
+      <div class="connected-field">
+        <input type="text" class="form-control">
+        <div class="name-label">MIDDLE NAME</div>
+      </div>
+    </div>
+    <!-- Separate auxiliary name field -->
+    <div class="name-field">
+      <input type="text" class="form-control">
+      <div class="name-label">AUXILIARY NAME<br>(Sr,Jr,I,II,III,etc.)</div>
+    </div>
+  </div>
+  
+  <div class="section-header">STUDENT DETAILS:</div>
+  
+  <div class="form-group">
+    <label>City Address:</label>
+    <input type="text" class="form-control">
+  </div>
+  
+  <div class="contact-row">
+    <div class="col">
+      <div class="form-group">
+        <label>Zip Code:</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Tel. No.:</label>
+        <input type="tel" class="form-control">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>E-mail address:</label>
+        <input type="email" class="form-control">
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label>Home Address:</label>
+    <input type="text" class="form-control">
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <div class="colon-layout">
+        <label>Zip Code</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Birthday</label>
+        <span class="colon">:</span>
+        <input type="date" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Birthplace</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Citizenship</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <label>If Alien, ACR # (see Registrar):</label>
+    <input type="text" class="form-control">
+    </div>
+
+    <div class="col">
+      <div class="colon-layout">
+        <label>Region</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Age</label>
+        <span class="colon">:</span>
+        <input type="number" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Religion</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="colon-layout">
+        <label>Sex</label>
+        <span class="colon">:</span>
+        <select class="form-control">
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-sections">
+    <div class="col">
+      <div class="section-header">Legal Status:</div>
+      
+      <div class="radio-group">
+        <input type="radio" id="citizen" name="legal-status">
+        <label for="citizen">Citizen of RP</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="permanent" name="legal-status">
+        <label for="permanent">Permanent Resident</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="permission1" name="legal-status">
+        <label for="permission1">Person granted permission to enter and</label>
+      </div>
+      <div class="indented">remain as a student in RP on a visa for</div>
+      <div class="indented">a defined period of time</div>
+      
+      <div class="radio-group">
+        <input type="radio" id="permission2" name="legal-status">
+        <label for="permission2">Person granted permission to enter and</label>
+      </div>
+      <div class="indented">remain as a child or spouse of a worker</div>
+      <div class="indented">on a visa for a defined period of time</div>
+      
+      <div class="radio-group">
+        <input type="radio" id="other" name="legal-status">
+        <label for="other">Other visa</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="unknown" name="legal-status">
+        <label for="unknown">Legal status not known</label>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="section-header">Civil Status:</div>
+      
+      <div class="radio-group">
+        <input type="radio" id="single" name="civil-status">
+        <label for="single">Single</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="married" name="civil-status">
+        <label for="married">Married</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="divorced" name="civil-status">
+        <label for="divorced">Divorced</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="widowed" name="civil-status">
+        <label for="widowed">Widowed</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="separated" name="civil-status">
+        <label for="separated">Separated</label>
+      </div>
+      
+      <div style="margin-top: 15px;">
+        <div class="radio-group">
+          <input type="radio" id="working" name="working-status">
+          <label for="working">Working</label>
+          <input type="radio" id="notworking" name="working-status" style="margin-left: 20px;">
+          <label for="notworking">Not working</label>
+        </div>
+        
+        <div class="form-group" style="margin-left: 25px;">
+          <label class="single-line">If working: Office/Bus. Tel. #:</label>
+          <input type="tel" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="parent-sections">
+    <div class="parent-section">
+      <div class="section-header">FATHER'S INFORMATION:</div>
+      
+      <div class="colon-layout">
+        <label>Surname</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>First Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Middle Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label class="single-line">Auxiliary Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Occupation/<br>Employment</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Educational<br>Attainment</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    
+    <div class="parent-section">
+      <div class="section-header">MOTHER'S INFORMATION:</div>
+      
+      <div class="colon-layout">
+        <label>Surname</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>First Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Middle Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label class="single-line">Auxiliary Name</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Occupation/<br>Employment</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+      
+      <div class="colon-layout">
+        <label>Educational<br>Attainment</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label>Parent's Address:</label>
+    <input type="text" class="form-control">
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <div class="colon-layout">
+        <label>Zip Code</label>
+        <span class="colon">:</span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col">
+      <div class="colon-layout">
+        <label class="single-line">Parent's Tel. #</label>
+        <span class="colon">:</span>
+        <input type="tel" class="form-control">
+      </div>
+    </div>
+  </div>
+  
+  <div class="guardian-section">
+    <div class="section-header">GUARDIAN'S INFORMATION: (If Applicable)</div>
+    
+    <div class="row">
+      <div class="col">
+        <div class="colon-layout">
+          <label>Surname</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div class="colon-layout">
+          <label>First Name</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div class="colon-layout">
+          <label>Middle Name</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div class="colon-layout">
+          <label class="single-line">Auxiliary Name</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div class="colon-layout">
+          <label>Occupation/<br>Employment</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div class="colon-layout">
+          <label class="single-line">Off./Bus. Tel. #</label>
+          <span class="colon">:</span>
+          <input type="tel" class="form-control">
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="colon-layout">
+          <label>Guardian's<br>Address</label>
+          <span class="colon">:</span>
+          <input type="text" class="form-control">
+        </div>
+        
+        <div style="margin-top: 80px;">
+          <div class="colon-layout">
+            <label>Zip Code</label>
+            <span class="colon">:</span>
+            <input type="text" class="form-control">
+          </div>
+          
+          <div class="colon-layout" style="margin-top: 30px;">
+            <label>Tel. #</label>
+            <span class="colon">:</span>
+            <input type="tel" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

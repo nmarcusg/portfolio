@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", serif;
+    color: #F5F5F5;
+}
+
+/* body */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://img.freepik.com/free-photo/season-landscape-fluffy-weather-spring_1122-2347.jpg) no-repeat center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* table */
+
+table {
+    margin: 16px;
+    max-width: 100%;
+    text-align: left;
+    background-color: rgba(128, 128, 128, 0.63);
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+/* boxcontainer */
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 48px;
+    margin: 16px;
+    background-color: rgba(128, 128, 128, 0.63);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* imgcontainer */
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* textcontainer */
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 8px;
+}
+
+.text-container h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+.text-container h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+/* for smaller screens */
+
+@media screen and (max-width: 1200px) {
+    .box-container {
+        flex-wrap: wrap;
+    }
+    
+    .text-container {
+        max-width: 100%;
+        padding: 8px;
+    }
+    
+    img {
+        min-width: auto;
+    }
+}

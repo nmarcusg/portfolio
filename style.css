@@ -540,6 +540,10 @@ body {
   flex-wrap: wrap;
 }
 
+.acts2 {
+  height: calc(100% + 8rem);
+}
+
 @media(max-width: 1650px) {
   .greeting-container {
     max-width: 60vw;
