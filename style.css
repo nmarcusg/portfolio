@@ -132,7 +132,7 @@ body {
 
 .greeting-container {
     min-width: clamp(10vw, 2vw, 60vw);
-    max-width: 70vw;
+    max-width: 65vw;
     display: flex;
     flex-direction: column;
     /* order: 2; */
@@ -365,7 +365,7 @@ body {
 }
 
 .about h2 {
-    font-size: clamp(1.25rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--black);
@@ -408,7 +408,7 @@ body {
 }
 
 .name {
-    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-size: clamp(2rem, 2vw, 2rem);
     font-weight: 700;
     color: var(--black);
 }
@@ -431,6 +431,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: clamp(1rem, 5vw, 1.3rem);
 }
 
 .subcategory-list li svg {
@@ -464,6 +465,7 @@ body {
   flex-direction: row;
   flex-flow: wrap-reverse;
   gap: 1.5rem;
+  min-width: 800px;
 }
 
 .img-container img {
@@ -534,7 +536,74 @@ body {
   cursor: pointer;
 }
 
-@media  (max-width: 768px) {
+.collapse {
+  flex-wrap: wrap;
+}
+
+@media(max-width: 1650px) {
+  .greeting-container {
+    max-width: 60vw;
+  }
+}
+
+@media(max-width: 1500px) {
+  .skills-list, .skills-education {
+    width: 500px;
+  }
+  .greeting-container {
+    max-width: 50vw;
+  }
+  .acts1 {
+    flex-direction: row;
+  }
+}
+
+@media(max-width: 1115px) {
+  .skills-list, .skills-education {
+    width: 400px;
+  }
+  .act-container {
+    min-width: 200px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .container {
+    gap: 2rem;
+  }
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 600px;
+  }
+
+  .subcategory-list {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about > * {
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .personal {
+    padding-right: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .skills-list, .skills-education {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
     .header {
         flex-direction: row;
         align-items: center;
@@ -594,7 +663,6 @@ body {
     }
 
     .greeting-subtitle {
-        font-size: clamp(1rem, 5vw, 2rem);
         text-align: justify;
         justify-content: center;
 
@@ -621,10 +689,26 @@ body {
     .personal {
       padding-right: 0;
       text-align: center;
+      width: 90vw;
     }
     
+    .acts {
+        height: auto;
+        width: 100%;
+        padding: 1rem;
+    }
     .act-header {
         font-size: clamp(2rem, 5vw, 3rem);
         text-align: center;
+    }
+
+    .subcategory-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        text-align: center;
+    }
+
+    .collapse {
+        align-items: center;
+        justify-content: center;
     }
 }
